@@ -6,7 +6,7 @@ pipeline {
         DOCKER_IMAGE_NAME='kartheekb1994/nodejs-app'
         K8S_NAMESPACE='default'
         K8S_DEPLOYMENT_NAME='nodejs-app-deployment'
-        GIT_REPO='https://github.com/kartheekb1994/node-js-app'
+        GIT_REPO='https://github.com/kartheekb1994/nodejs-app.git'
     }
     
     stages {

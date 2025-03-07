@@ -15,7 +15,6 @@ pipeline {
                 git url: env.GIT_REPO, branch:'main'
             }
         }
-    }
     
         stage('Build Docker Image') {
             steps {
@@ -38,9 +37,7 @@ pipeline {
         script {
             docker.withRegistry('https://index.docker.io/v1/',
             DOCKERHUB_CREDENTIALS) {docker.push("${DOCKER_IMAGE_NAME}:${env.BUILD_ID}")
-            docker.push("${DOCKER_IMAGE_NAME}:latest")
-        
-        }
+            docker.push("${DOCKER_IMAGE_NAME}:latest")        }
     }
 }
 }
@@ -56,7 +53,7 @@ pipeline {
         
     }
 }
-
+    }
 post {
     success{
         echo 'Pipeline Completed Successfully!'

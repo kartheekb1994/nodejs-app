@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+matadata:
+  name: node-js-network-policy
+  spec:
+    podSelector:
+      matchLabels:
+        app: node-js
+  app: node-js
+  policyTypes:
+  - ingress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          access: allowed
